@@ -1,0 +1,41 @@
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = "ParkinsonDataCollection"                               // Maven Group ID for the artifact
+
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                groupId 'ParkinsonDataCollection'
+                artifactId 'ParkinsonDataCollection'
+
+                // Add your description here
+                name 'ParkinsonDataCollection'
+                description 'a library for parkions'
+                url 'https://github.com/BruceAnda/cana-android'
+
+                // Set your license
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'ict'
+                        name 'ict'
+                        email 'zhaoliang5156@gmail.com'
+                    }
+                }
+                scm {
+                    connection 'https://github.com/BruceAnda/cana-android.git'
+                    developerConnection 'https://github.com/BruceAnda/cana-android.git'
+                    url 'https://github.com/BruceAnda/cana-android'
+                }
+            }
+        }
+    }
+}
