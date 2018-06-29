@@ -1,4 +1,4 @@
-package com.bawei.recycleviewdemo;
+package com.bawei.channelmanager.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,16 +9,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.bawei.recycleviewdemo.adapter.MoreChannelAdapter;
-import com.bawei.recycleviewdemo.adapter.MyChannelAdapter;
-import com.bawei.recycleviewdemo.bean.ChannelBean;
-import com.bawei.recycleviewdemo.callback.MyItemTouchCallback;
-import com.bawei.recycleviewdemo.db.ChannelDao;
+import com.bawei.channelmanager.adapter.MoreChannelAdapter;
+import com.bawei.channelmanager.adapter.MyChannelAdapter;
+import com.bawei.channelmanager.bean.ChannelBean;
+import com.bawei.channelmanager.callback.MyItemTouchCallback;
+import com.bawei.channelmanager.db.ChannelDao;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import com.bawei.channelmanager.R;
+
 
 /**
  * 频道管理
@@ -27,9 +29,9 @@ import java.util.List;
  * @version 1.0
  * @create 2018/6/28
  */
-public class MainActivity extends AppCompatActivity implements MoreChannelAdapter.MoreChannelCallback, MyChannelAdapter.MyChannelCallback, View.OnClickListener {
+public class ChannelActivity extends AppCompatActivity implements MoreChannelAdapter.MoreChannelCallback, MyChannelAdapter.MyChannelCallback {
 
-    public static final String TAG = MainActivity.class.getSimpleName();
+    public static final String TAG = ChannelActivity.class.getSimpleName();
     private RecyclerView rvMyChannel;
     private RecyclerView rvAllCahnnel;
     private List<ChannelBean> myChannelBeans = new ArrayList<>();
@@ -48,6 +50,9 @@ public class MainActivity extends AppCompatActivity implements MoreChannelAdapte
         setContentView(R.layout.activity_main);
 
         channelDao = new ChannelDao(this);
+        rvMyChannel = findViewById(R.id.rv_my_channel);
+        rvAllCahnnel = findViewById(R.id.rv_more_channel);
+        tvEdit = findViewById(R.id.tv_edit);
 
         loadLocal();
 
@@ -62,10 +67,12 @@ public class MainActivity extends AppCompatActivity implements MoreChannelAdapte
             loadLocal();
         }
 
-        rvMyChannel = findViewById(R.id.rv_mychannel);
-        rvAllCahnnel = findViewById(R.id.rv_allchannel);
-        tvEdit = findViewById(R.id.tv_edit);
-        tvEdit.setOnClickListener(this);
+        tvEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeMyChannelState();
+            }
+        });
 
         rvMyChannel.setLayoutManager(new GridLayoutManager(this, 4));
         rvAllCahnnel.setLayoutManager(new GridLayoutManager(this, 4));
@@ -121,15 +128,6 @@ public class MainActivity extends AppCompatActivity implements MoreChannelAdapte
         loadMoreChannel.add(channelBean);
         //channelDao.update(channelBean);
         moreChannelAdapter.notifyDataSetChanged();
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.tv_edit:
-                changeMyChannelState();
-                break;
-        }
     }
 
     /**

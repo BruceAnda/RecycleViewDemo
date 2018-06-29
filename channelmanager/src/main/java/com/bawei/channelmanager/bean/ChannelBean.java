@@ -1,4 +1,4 @@
-package com.bawei.recycleviewdemo.bean;
+package com.bawei.channelmanager.bean;
 
 public class ChannelBean {
 

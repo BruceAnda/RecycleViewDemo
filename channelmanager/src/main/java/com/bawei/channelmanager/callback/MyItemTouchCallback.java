@@ -1,9 +1,10 @@
-package com.bawei.recycleviewdemo.callback;
+package com.bawei.channelmanager.callback;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
-import com.bawei.recycleviewdemo.R;
+import com.bawei.channelmanager.R;
+
 
 public class MyItemTouchCallback extends ItemTouchHelper.Callback {
 

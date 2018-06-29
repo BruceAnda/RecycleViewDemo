@@ -1,4 +1,4 @@
-package com.bawei.recycleviewdemo.adapter;
+package com.bawei.channelmanager.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,8 +10,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bawei.recycleviewdemo.R;
-import com.bawei.recycleviewdemo.bean.ChannelBean;
+import com.bawei.channelmanager.bean.ChannelBean;
+import com.bawei.channelmanager.R;
 
 import java.util.List;
 

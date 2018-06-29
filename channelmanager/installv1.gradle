@@ -1,6 +1,6 @@
 apply plugin: 'com.github.dcendents.android-maven'
 
-group = "ParkinsonDataCollection"                               // Maven Group ID for the artifact
+group = "channelmanager"                               // Maven Group ID for the artifact
 
 install {
     repositories.mavenInstaller {
@@ -8,13 +8,13 @@ install {
         pom {
             project {
                 packaging 'aar'
-                groupId 'ParkinsonDataCollection'
-                artifactId 'ParkinsonDataCollection'
+                groupId 'channelmanager'
+                artifactId 'channelmanager'
 
                 // Add your description here
-                name 'ParkinsonDataCollection'
-                description 'a library for parkions'
-                url 'https://github.com/BruceAnda/cana-android'
+                name 'channelmanager'
+                description 'a library for channel manager'
+                url 'https://github.com/BruceAnda/RecycleViewDemo'
 
                 // Set your license
                 licenses {
@@ -31,9 +31,9 @@ install {
                     }
                 }
                 scm {
-                    connection 'https://github.com/BruceAnda/cana-android.git'
-                    developerConnection 'https://github.com/BruceAnda/cana-android.git'
-                    url 'https://github.com/BruceAnda/cana-android'
+                    connection 'https://github.com/BruceAnda/RecycleViewDemo.git'
+                    developerConnection 'https://github.com/BruceAnda/RecycleViewDemo.git'
+                    url 'https://github.com/BruceAnda/RecycleViewDemo'
                 }
             }
         }

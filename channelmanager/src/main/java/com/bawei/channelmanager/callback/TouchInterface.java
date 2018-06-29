@@ -1,4 +1,4 @@
-package com.bawei.recycleviewdemo.callback;
+package com.bawei.channelmanager.callback;
 
 public interface TouchInterface {
 

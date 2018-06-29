@@ -1,11 +1,11 @@
-package com.bawei.recycleviewdemo.db;
+package com.bawei.channelmanager.db;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.bawei.recycleviewdemo.bean.ChannelBean;
+import com.bawei.channelmanager.bean.ChannelBean;
 
 import java.util.ArrayList;
 import java.util.List;

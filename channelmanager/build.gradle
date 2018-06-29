@@ -1,4 +1,8 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'org.jetbrains.dokka'
+def AAVersion = '4.1.0'
 
 android {
     compileSdkVersion 27
@@ -25,10 +29,17 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
 }
+
+apply from: 'installv1.gradle'
+apply from: 'bintrayv1.gradle'
+
+
+// /Users/zhaoliang/AndroidStudioProjects/work/cana-android/gradlew bintrayUpload
+// /Users/zhaoliang/AndroidStudioProjects/work/cana-android/gradlew install

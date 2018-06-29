@@ -1,6 +1,6 @@
 apply plugin: 'com.jfrog.bintray'
 
-version = '0.3.4'
+version = '0.4.1'
 
 if (project.hasProperty("kotlin")) { //Kotlin libraries
     task sourcesJar(type: Jar) {
@@ -49,15 +49,15 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = 'maven'
-        name = 'ChannelManager'
-        desc = 'a library for parkions'
-        websiteUrl = 'https://github.com/BruceAnda/cana-android'
-        vcsUrl = 'https://github.com/BruceAnda/cana-android.git'
+        name = 'channelmanager'
+        desc = 'a library for channelmanager'
+        websiteUrl = 'https://github.com/BruceAnda/RecycleViewDemo'
+        vcsUrl = 'https://github.com/BruceAnda/RecycleViewDemo.git'
         licenses = ["Apache-2.0"]
         publish = true
         publicDownloadNumbers = true
         version {
-            desc = 'a library for parkions'
+            desc = 'a library for channel manager'
             gpg {
                 sign = true //Determines whether to GPG sign the files. The default is false
                 passphrase = properties.getProperty("bintray.gpg.password")

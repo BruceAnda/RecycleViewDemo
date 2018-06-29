@@ -1,4 +1,4 @@
-package com.bawei.recycleviewdemo.db;
+package com.bawei.channelmanager.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
