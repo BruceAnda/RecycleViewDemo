@@ -12,7 +12,7 @@
     ```
 2. 在app的build.gradle 点击如下代码
     ```
-    implementation 'channelmanager:channelmanager:0.4.5'
+    implementation 'channelmanager:channelmanager:0.4.6'
     ```
 3. 在布局文件中使用
 
